@@ -1,5 +1,4 @@
 use std::{
-    env,
     fs::File,
     io::{BufRead, BufReader},
 };
@@ -31,10 +30,23 @@ fn read_file_input_to_tuple_of_vecs(
     Ok((left, right))
 }
 
+fn calculate_distance(l: &Vec<u32>, r: &Vec<u32>) -> u32 {
+    let mut i = 0;
+    let end = l.len();
+    let mut results = Vec::new();
+
+    while i < end {
+        let distance = l[i].abs_diff(r[i]);
+        results.push(distance);
+        i += 1;
+    }
+
+    results.iter().sum()
+}
+
 fn main() -> Result<(), String> {
     println!("Day 1!");
-    let current_dir = env::current_dir().expect("error dir");
-    println!("{current_dir:?}");
+
     let path = "./src/resources/day01input";
     let vecs = read_file_input_to_tuple_of_vecs(path);
 
@@ -42,23 +54,8 @@ fn main() -> Result<(), String> {
     left.sort();
     right.sort();
 
-    println!("LEFT: {left:?}");
-    println!("RIGHT: {right:?}");
-
-    let mut results = Vec::new();
-
-    let mut i = 0;
-    let end = left.len();
-
-    while i < end {
-        let distance = left[i].abs_diff(right[i]);
-        println!("DIST: {distance}");
-        results.push(distance);
-        i += 1;
-    }
-
-    let sum: u32 = results.iter().sum();
-    println!("SUM: {sum}");
+    let distance = calculate_distance(&left, &right);
+    println!("DISTANCE: {distance}");
 
     Ok(())
 }
