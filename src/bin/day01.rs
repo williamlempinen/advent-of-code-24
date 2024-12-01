@@ -44,6 +44,28 @@ fn calculate_distance(l: &Vec<u32>, r: &Vec<u32>) -> u32 {
     results.iter().sum()
 }
 
+fn calculate_similarity_score(l: &Vec<u32>, r: &Vec<u32>) -> u32 {
+    let mut i = 0;
+    let end = l.len();
+    let mut results = Vec::new();
+
+    while i < end {
+        let refer = l[i];
+        let mut count: u32 = 0;
+
+        for right_value in r.iter() {
+            if &refer == right_value {
+                count += 1;
+            }
+        }
+
+        results.push(refer * count);
+        i += 1;
+    }
+
+    results.iter().sum()
+}
+
 fn main() -> Result<(), String> {
     println!("Day 1!");
 
@@ -56,6 +78,9 @@ fn main() -> Result<(), String> {
 
     let distance = calculate_distance(&left, &right);
     println!("DISTANCE: {distance}");
+
+    let similarity_score = calculate_similarity_score(&left, &right);
+    println!("SIMILARITY SCORE: {similarity_score}");
 
     Ok(())
 }
