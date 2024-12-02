@@ -21,8 +21,6 @@ fn read_input_lines(path: &str) -> Result<Vec<Vec<u8>>, io::Error> {
             .map(|val| val.parse::<u8>().unwrap())
             .collect();
 
-        println!("REPORT: {:?}", report);
-
         results.push(report);
     }
 
@@ -79,10 +77,8 @@ fn report_is_valid(report: &Vec<u8>) -> bool {
 
 fn use_tolerater(report: &Vec<u8>) -> bool {
     for idx in 0..report.len() {
-        println!("ORIGINAL: {:?}", report);
         let mut cloned_report = report.clone();
         cloned_report.remove(idx);
-        println!("CLONED TO CHECK IF VALID: {:?}", cloned_report);
         let result = report_is_valid(&cloned_report);
 
         if result {
@@ -93,18 +89,16 @@ fn use_tolerater(report: &Vec<u8>) -> bool {
 }
 
 fn main() -> Result<(), String> {
-    println!("Day 02!");
+    println!("Day 2!");
 
     let path = "./src/resources/day02input";
     let reports = read_input_lines(path).unwrap();
     let mut results: Vec<bool> = Vec::new();
 
     for report in reports {
-        println!("REPORT: {:?}", report);
         let result = report_is_valid(&report);
 
         if !result {
-            println!("WAS NOT VALID LETS USE TOLERATOR");
             let is_tolerated_result = use_tolerater(&report);
 
             if is_tolerated_result {
