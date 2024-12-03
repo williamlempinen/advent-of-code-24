@@ -1,4 +1,5 @@
 use std::{
+    error::Error,
     fs::File,
     io::{self, BufRead, BufReader},
 };
@@ -88,7 +89,7 @@ fn use_tolerater(report: &Vec<u8>) -> bool {
     return false;
 }
 
-fn main() -> Result<(), String> {
+fn main() -> Result<(), Box<dyn Error>> {
     println!("Day 2!");
 
     let path = "./src/resources/day02input";

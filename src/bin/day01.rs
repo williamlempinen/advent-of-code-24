@@ -1,4 +1,5 @@
 use std::{
+    error::Error,
     fs::File,
     io::{BufRead, BufReader},
 };
@@ -66,7 +67,7 @@ fn calculate_similarity_score(l: &Vec<u32>, r: &Vec<u32>) -> u32 {
     results.iter().sum()
 }
 
-fn main() -> Result<(), String> {
+fn main() -> Result<(), Box<dyn Error>> {
     println!("Day 1!");
 
     let path = "./src/resources/day01input";

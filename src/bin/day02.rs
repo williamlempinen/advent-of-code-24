@@ -1,4 +1,5 @@
 use std::{
+    error::Error,
     fs::File,
     io::{self, BufRead, BufReader},
 };
@@ -77,7 +78,7 @@ fn report_is_valid(report: &Vec<u8>) -> bool {
     true
 }
 
-fn main() -> Result<(), String> {
+fn main() -> Result<(), Box<dyn Error>> {
     println!("Day 02!");
 
     let path = "./src/resources/day02input";
