@@ -46,12 +46,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut numbers: Vec<i32> = Vec::new();
     let mut temp_stack: Vec<&str> = Vec::new();
 
-    println!("STRING: {as_string}");
-
     let matches = extract_valid_commands(&as_string)?;
 
     for command in matches {
-        println!("NEW ROUND");
         if temp_stack.len() == 0 {
             println!("CALCULATING");
             let temp = calculate_commands(command);
