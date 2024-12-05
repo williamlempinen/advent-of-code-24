@@ -88,7 +88,6 @@ fn main() -> Result<()> {
     let word = "XMAS".to_string();
 
     let word_matrice = read_input_to_char_matrice(path)?;
-    println!("MATRICES: {:?}", word_matrice);
 
     let count = search_word(&word_matrice, word).expect("Error counting");
 
