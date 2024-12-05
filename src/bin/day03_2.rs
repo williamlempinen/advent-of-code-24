@@ -4,7 +4,7 @@ use std::{
     io::{self, Read},
 };
 
-use regex::{Regex, RegexSet};
+use regex::Regex;
 
 fn read_input_to_string(filepath: &str) -> Result<String, io::Error> {
     let mut file = File::open(filepath).expect("Error opening input file");
