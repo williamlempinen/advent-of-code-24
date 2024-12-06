@@ -70,7 +70,7 @@ fn calculate_similarity_score(l: &Vec<u32>, r: &Vec<u32>) -> u32 {
 fn main() -> Result<(), Box<dyn Error>> {
     println!("Day 1!");
 
-    let path = "./src/resources/day01input";
+    let path = "./src/inputs/day01input";
     let vecs = read_file_input_to_tuple_of_vecs(path);
 
     let (mut left, mut right) = vecs.unwrap();

@@ -68,7 +68,7 @@ fn search_x_mas(matrice: &Vec<Vec<char>>) -> Result<i32, anyhow::Error> {
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Day 4!");
-    let path = "./src/resources/day04input";
+    let path = "./src/inputs/day04input";
 
     let word_matrice = read_input_to_char_matrice(path)?;
 

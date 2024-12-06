@@ -70,7 +70,7 @@ fn find_middle_from_update(update: &Vec<i32>) -> Option<i32> {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Day 5!");
 
-    let path = "./src/resources/day05input";
+    let path = "./src/inputs/day05input";
     let (rules, updates) = read_rules_and_updates(path)?;
 
     let mut middles_sum = 0;

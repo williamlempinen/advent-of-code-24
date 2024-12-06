@@ -84,7 +84,7 @@ fn search_word(matrice: &Vec<Vec<char>>, word: String) -> Result<i32, anyhow::Er
 
 fn main() -> Result<()> {
     println!("Day 4!");
-    let path = "./src/resources/day04input";
+    let path = "./src/inputs/day04input";
     let word = "XMAS".to_string();
 
     let word_matrice = read_input_to_char_matrice(path)?;

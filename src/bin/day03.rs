@@ -39,7 +39,7 @@ fn calculate_commands(command: &str) -> i32 {
 fn main() -> Result<(), Box<dyn Error>> {
     println!("Day 3!");
 
-    let path = "./src/resources/day03input";
+    let path = "./src/inputs/day03input";
     let as_string = read_input_to_string(path).unwrap();
     let mut numbers: Vec<i32> = Vec::new();
 

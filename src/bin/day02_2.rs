@@ -92,7 +92,7 @@ fn use_tolerater(report: &Vec<u8>) -> bool {
 fn main() -> Result<(), Box<dyn Error>> {
     println!("Day 2!");
 
-    let path = "./src/resources/day02input";
+    let path = "./src/inputs/day02input";
     let reports = read_input_lines(path).unwrap();
     let mut results: Vec<bool> = Vec::new();
 
