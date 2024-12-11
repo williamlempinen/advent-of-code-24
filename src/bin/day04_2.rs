@@ -1,7 +1,6 @@
 use std::{
     fs::File,
     io::{BufRead, BufReader},
-    isize,
 };
 
 fn read_input_to_char_matrice(path: &str) -> Result<Vec<Vec<char>>, std::io::Error> {
